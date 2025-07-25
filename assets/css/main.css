@@ -109,15 +109,26 @@ input, select, textarea {
 		color: #49bf9d;
 		text-decoration: none;
 	}
-
+    a.menu {
+      position: absolute;
+      right: 0;
+      top: 3em;
+    }
+    a.menu img {
+      max-width: 40px;
+    }
+    a.menu:hover {
+      transform: translateX(-5px);
+      -webkit-transform: translateX(-5px);
+    }
 		a:hover {
 			border-bottom-color: transparent;
-			color: #49bf9d !important;
+			color: #e6a2b5 !important;
 			text-decoration: none;
 		}
 
 	strong, b {
-		color: #787878;
+		color: #e6a2b5;
 		font-weight: 400;
 	}
 
@@ -2586,18 +2597,18 @@ input, select, textarea {
 		-webkit-justify-content: space-between;
 		-ms-justify-content: space-between;
 		justify-content: space-between;
-		background-color: #1f1815;
-		background-attachment: scroll,								scroll;
-		background-image: url("images/overlay.png"), url("../../images/pink.png");
-		background-position: top left,							top left;
-		background-repeat: repeat,								no-repeat;
-		background-size: auto,								150%;
+		background-color: #0000;
+		background-attachment: fixed;
+		background-image: url("../../images/tunnelB.jpg");
+		background-position: top left;
+		background-repeat: no-repeat;
+		background-size: 40%;
 		color: rgba(255, 255, 255, 0.5);
 		height: 100%;
 		left: 0;
 		padding: 8em 4em;
 		position: fixed;
-		text-align: right;
+		text-align: left;
 		top: 0;
 		width: 35%;
 	}
@@ -2615,11 +2626,11 @@ input, select, textarea {
 			-webkit-flex-grow: 1;
 			-ms-flex-grow: 1;
 			flex-grow: 1;
-			margin: 0 0 2em 0;
+			margin: 20em 0 2em 0;
 		}
 
 		#header strong, #header b {
-			color: #ffffff;
+			color: #e6a2b5;
 		}
 
 		#header h2, #header h3, #header h4, #header h5, #header h6 {
@@ -3048,7 +3059,7 @@ input, select, textarea {
 		/* Header */
 
 			#header {
-				background-attachment: scroll;
+				background-attachment: fixed;
 				background-position: top left, center center;
 				background-size: auto,		cover;
 				left: auto;
@@ -3071,15 +3082,15 @@ input, select, textarea {
 		/* Footer */
 
 			#footer {
-				background-attachment: scroll;
+				background-attachment: fixed;
 				background-color: #1f1815;
-				background-image: url("images/overlay.png"), url("../../images/pink.png");
-				background-position: top left,						bottom center;
-				background-repeat: repeat,							no-repeat;
-				background-size: auto,							cover;
+				background-image: url("../../images/tunnelB.jpg");
+				background-position: top left,
+				background-repeat: no-repeat;
+				background-size: auto;
 				bottom: auto;
 				left: auto;
-				padding: 4em 4em 6em 4em;
+				padding: 4em 4em 4em 4em;
 				position: relative;
 				text-align: center;
 				width: 100%;

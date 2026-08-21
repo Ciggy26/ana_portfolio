@@ -1,4 +1,4 @@
-# Ana Micanovic — Game Producer Portfolio
+# Ana Mićanović, Game Producer Portfolio
 
 Static one-pager, no build step required.
 

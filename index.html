@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ana Micanovic · Game Producer</title>
+<title>Ana Mićanović · Game Producer</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><path fill=%22%23E6A2B5%22 d=%22M12 21s-7.5-4.6-10-9.3C0.3 8 2 4 6 4c2.2 0 3.8 1.2 6 3.6C14.2 5.2 15.8 4 18 4c4 0 5.7 4 4 7.7C19.5 16.4 12 21 12 21z%22/></svg>">
-<meta name="description" content="Ana Micanovic, Game Producer. Business sense, technical understanding and creative vision, shipping games from first idea to gold master.">
+<meta name="description" content="Ana Mićanović, Game Producer. Business sense, technical understanding and creative vision, shipping games from first idea to gold master.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -67,8 +67,9 @@
     display:inline-flex;align-items:center;gap:6px;
   }
   .nsg-pill:hover{background:var(--rose-deep);}
-  .hero{padding:88px 0 90px;}
-  .hero-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center;}
+  body{overflow-x:hidden;}
+  .hero{position:relative;padding:88px 0 90px;}
+  .hero-content{position:relative;z-index:2;max-width:640px;}
   .hero-eyebrow{
     font-family:'JetBrains Mono',monospace;
     color:var(--rose-deep);font-weight:500;
@@ -88,21 +89,31 @@
     max-width:520px;margin-top:30px;
     font-size:18px;line-height:1.55;color:#333;
   }
-  .hero-photo-wrap{position:relative;}
-  .photo-blob{
+  .hero-visual{
     position:absolute;
-    width:150%;height:150%;top:-18%;left:-38%;
+    top:46%;
+    right:-24px;
+    transform:translateY(-38%);
+    width:clamp(300px, 30vw, 480px);
+    aspect-ratio:1/1.05;
+    z-index:1;
+  }
+  .photo-blob{
+    position:absolute;inset:0;
     background:var(--rose);
     border-radius:63% 37% 54% 46% / 43% 58% 42% 57%;
     transform:rotate(-6deg);
-    z-index:0;
   }
   .hero-photo{
-    position:relative;z-index:1;
-    width:100%;aspect-ratio:4/5;object-fit:cover;
+    position:absolute;
+    top:8%;left:6%;
+    width:36%;
+    aspect-ratio:4/5;
+    object-fit:cover;
     border-radius:60% 40% 52% 48% / 44% 55% 45% 56%;
     filter:grayscale(1) contrast(1.05);
     display:block;
+    box-shadow:0 14px 30px rgba(0,0,0,.14);
   }
   .wavy-divider{display:block;width:100%;height:34px;margin-top:20px;}
   .nsg-portal-outer{padding:0 40px;margin:0 auto 64px;max-width:var(--maxw);}
@@ -289,8 +300,16 @@
     .wrap{padding:0 22px;}
     nav{padding:16px 22px;gap:12px;}
     .nav-links{display:none;}
-    .hero-grid{grid-template-columns:1fr;}
-    .hero-photo-wrap{max-width:280px;order:-1;margin-bottom:20px;}
+    .hero{padding:60px 0 70px;}
+    .hero-visual{
+      position:static;
+      transform:none;
+      width:200px;
+      max-width:62vw;
+      aspect-ratio:1/1.05;
+      margin:0 auto 28px;
+    }
+    .hero-content{max-width:none;}
     .nsg-portal-outer{padding:0 18px;}
     .nsg-portal{padding:42px 22px 32px;border-radius:16px;}
     .nsg-portal-mark{position:static;margin-top:22px;justify-content:center;}
@@ -308,7 +327,7 @@
 <body>
 <header>
   <nav>
-    <div class="logo-lockup">MICANOVIC<br>ANA</div>
+    <div class="logo-lockup">MIĆANOVIĆ<br>ANA</div>
     <div class="nav-links">
       <a href="#work">Work</a>
       <a href="#skills">Skills</a>
@@ -318,27 +337,27 @@
     </div>
   </nav>
 </header>
-<section class="hero wrap">
-  <div class="hero-grid">
-    <div>
+<section class="hero">
+  <div class="hero-visual">
+    <div class="photo-blob"></div>
+    <img class="hero-photo" src="assets/portrait.jpg" alt="Ana Mićanović">
+  </div>
+  <div class="wrap">
+    <div class="hero-content">
       <div class="hero-eyebrow">
         Game Producer
         <svg class="squiggle" viewBox="0 0 150 10" xmlns="http://www.w3.org/2000/svg"><path d="M2 7 C 20 2, 35 9, 50 5 S 80 1, 95 6 S 130 9, 148 4" stroke="#E6A2B5" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
       </div>
       <div class="hero-name">
         <div>ANA</div>
-        <div class="line2">MICANOVIC</div>
+        <div class="line2">MIĆANOVIĆ</div>
       </div>
       <p class="hero-claim">I bring business clarity, technical understanding and creative vision together, and guide games from first idea to gold master.</p>
     </div>
-    <div class="hero-photo-wrap">
-      <div class="photo-blob"></div>
-      <img class="hero-photo" src="assets/portrait.jpg" alt="Ana Micanovic">
-    </div>
+    <svg class="wavy-divider" viewBox="0 0 1200 34" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 20 C 100 5, 200 34, 300 20 S 500 5, 600 20 S 800 34, 900 20 S 1100 5, 1200 20" stroke="#0D0D0D" stroke-width="1.5" fill="none"/>
+    </svg>
   </div>
-  <svg class="wavy-divider" viewBox="0 0 1200 34" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 20 C 100 5, 200 34, 300 20 S 500 5, 600 20 S 800 34, 900 20 S 1100 5, 1200 20" stroke="#0D0D0D" stroke-width="1.5" fill="none"/>
-  </svg>
 </section>
 <div class="nsg-portal-outer">
   <div class="nsg-portal">
@@ -438,7 +457,7 @@
       <a class="nsg-pill" href="https://negativespacegames.com" target="_blank" rel="noopener" style="background:var(--rose);color:var(--ink)!important;">Visit ↗</a>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Ana Micanovic</span>
+      <span>© 2026 Ana Mićanović</span>
       <span>Game Producer Portfolio</span>
     </div>
   </div>

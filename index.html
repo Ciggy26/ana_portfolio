@@ -338,10 +338,6 @@
   </nav>
 </header>
 <section class="hero">
-  <div class="hero-visual">
-    <div class="photo-blob"></div>
-    <img class="hero-photo" src="assets/portrait.jpg" alt="Ana Mićanović">
-  </div>
   <div class="wrap">
     <div class="hero-content">
       <div class="hero-eyebrow">
@@ -465,28 +461,12 @@
 <script>
 const projects = [
   {
-    idx:"01", title:"Revolve", sub:"Extraction Shooter (Board Game)", img:"assets/projects/revolve.jpg",
-    meta:["Oct 2023","PC / Analog","Team of 6","15 weeks"],
-    situation:["My first ever project and the starting point of my producer career","Goal was translating digital extraction-shooter mechanics into an analog board game","Team size was reduced early, everyone was new to game dev"],
-    actions:["Shifted focus toward defining and validating the core loop","Introduced frequent, structured playtests","Actively reduced scope for clarity and polish"],
-    learnings:["Core gameplay has to come before features","Playtesting is the fastest way to solve design uncertainty","Production quality can strongly differentiate a project"],
-    outcome:"Won our school's \"Best Game\" award, the first time a first-year team ever had."
-  },
-  {
-    idx:"02", title:"Grimm &amp; Grimmer", sub:"Point &amp; Click Adventure", img:"assets/projects/grimm-grimmer.jpg",
-    meta:["Apr 2024","PC","Team of 7","15 weeks"],
-    situation:["My first digital project, aiming for a 2.5D look with only one programmer","Combining 2D and 3D in Unreal quickly became the main blocker"],
-    actions:["Started research sessions with programming and art leads","Ran rapid prototyping to validate technical approaches","Evaluated alternative engines before committing to a workaround"],
-    learnings:["Engine choice has to match the team's skills","Technical ambition has to match available resources"],
-    outcome:"The visual goal was reached, at high cost, but working technically and visually."
-  },
-  {
-    idx:"03", title:"Re:Formation", sub:"Serious Game (Cybersecurity)", img:"assets/projects/reformation.jpg",
-    meta:["Oct 2024","PC / Browser","Team of 8","15 weeks"],
-    situation:["Started as a complex detective-narrative RPG","Our lead programmer dropped out mid-production","Left behind an unstable prototype with an overly complex core loop"],
-    actions:["Made the call to completely reset the game vision","Reduced the project to a clear, cyber-themed platformer","Reorganized the team around rapid iteration and core functionality"],
-    learnings:["Scope control is critical, especially in client work","Decisive leadership is essential in a crisis"],
-    outcome:"Despite the late pivot, we delivered a presentable vertical slice in 5 weeks, and the client was happy."
+    idx:"05", title:"Raz.log", sub:"Action RPG", img:"assets/projects/razlog.jpg",
+    meta:["Oct 2025","PC","Team of 10","15 weeks"],
+    situation:["My first deliberate combination of the producer role with hands-on UI work","Took full artistic and technical ownership of the UI"],
+    actions:["Introduced regular check-ins and direct communication","Reduced feature count by merging tasks","Cut scope aggressively once risks became visible"],
+    learnings:["Combining production with hands-on dev heavily limits your own management bandwidth","Design, tech and narrative need to stay aligned around one shared gameplay flow"],
+    outcome:"Despite structural challenges, we reached a stable, presentable state with a fully integrated UI."
   },
   {
     idx:"04", title:"Flora Forge", sub:"Cozy RTS", img:"assets/projects/flora-forge.jpg",
@@ -497,12 +477,28 @@ const projects = [
     outcome:"Finished on time, without burnout, and stayed within scope."
   },
   {
-    idx:"05", title:"Raz.log", sub:"Action RPG", img:"assets/projects/razlog.jpg",
-    meta:["Oct 2025","PC","Team of 10","15 weeks"],
-    situation:["My first deliberate combination of the producer role with hands-on UI work","Took full artistic and technical ownership of the UI"],
-    actions:["Introduced regular check-ins and direct communication","Reduced feature count by merging tasks","Cut scope aggressively once risks became visible"],
-    learnings:["Combining production with hands-on dev heavily limits your own management bandwidth","Design, tech and narrative need to stay aligned around one shared gameplay flow"],
-    outcome:"Despite structural challenges, we reached a stable, presentable state with a fully integrated UI."
+    idx:"03", title:"Re:Formation", sub:"Serious Game (Cybersecurity)", img:"assets/projects/reformation.jpg",
+    meta:["Oct 2024","PC / Browser","Team of 8","15 weeks"],
+    situation:["Started as a complex detective-narrative RPG","Our lead programmer dropped out mid-production","Left behind an unstable prototype with an overly complex core loop"],
+    actions:["Made the call to completely reset the game vision","Reduced the project to a clear, cyber-themed platformer","Reorganized the team around rapid iteration and core functionality"],
+    learnings:["Scope control is critical, especially in client work","Decisive leadership is essential in a crisis"],
+    outcome:"Despite the late pivot, we delivered a presentable vertical slice in 5 weeks, and the client was happy."
+  },
+  {
+    idx:"02", title:"Grimm &amp; Grimmer", sub:"Point &amp; Click Adventure", img:"assets/projects/grimm-grimmer.jpg",
+    meta:["Apr 2024","PC","Team of 7","15 weeks"],
+    situation:["My first digital project, aiming for a 2.5D look with only one programmer","Combining 2D and 3D in Unreal quickly became the main blocker"],
+    actions:["Started research sessions with programming and art leads","Ran rapid prototyping to validate technical approaches","Evaluated alternative engines before committing to a workaround"],
+    learnings:["Engine choice has to match the team's skills","Technical ambition has to match available resources"],
+    outcome:"The visual goal was reached, at high cost, but working technically and visually."
+  },
+  {
+    idx:"01", title:"Revolve", sub:"Extraction Shooter (Board Game)", img:"assets/projects/revolve.jpg",
+    meta:["Oct 2023","PC / Analog","Team of 6","15 weeks"],
+    situation:["My first ever project and the starting point of my producer career","Goal was translating digital extraction-shooter mechanics into an analog board game","Team size was reduced early, everyone was new to game dev"],
+    actions:["Shifted focus toward defining and validating the core loop","Introduced frequent, structured playtests","Actively reduced scope for clarity and polish"],
+    learnings:["Core gameplay has to come before features","Playtesting is the fastest way to solve design uncertainty","Production quality can strongly differentiate a project"],
+    outcome:"Won our school's \"Best Game\" award, the first time a first-year team ever had."
   }
 ];
 const container = document.getElementById('projects');

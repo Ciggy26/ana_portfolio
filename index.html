@@ -1,130 +1,560 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ana Micanovic · Game Producer</title>
+<meta name="description" content="Ana Micanovic, Game Producer. Business sense, technical understanding and creative vision, shipping games from first idea to gold master.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FFFFFF;
+    --tint:#FBEFF2;
+    --ink:#0D0D0D;
+    --rose:#E6A2B5;
+    --rose-deep:#D98BA1;
+    --gray:#8A8A8A;
+    --line:#E5E1E2;
+    --maxw:1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    position:relative;
+  }
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    pointer-events:none;z-index:200;
+    opacity:.035;
+    mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px;}
+  a{color:inherit;text-decoration:none;}
 
-<html>
-	<head>
-		<title>Portfolio Ana Micanovic</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+  /* ---- NAV ---- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    max-width:var(--maxw);margin:0 auto;padding:18px 40px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .logo-lockup{
+    font-family:'Syne',sans-serif;font-weight:800;
+    font-size:15px;line-height:0.9;letter-spacing:.01em;
+  }
+  .nav-links{
+    display:flex;align-items:center;gap:28px;
+    font-size:13px;letter-spacing:.04em;text-transform:uppercase;
+    font-weight:500;color:var(--ink);
+  }
+  .nav-links a{opacity:.7;transition:opacity .15s;}
+  .nav-links a:hover{opacity:1;}
+  .nsg-pill{
+    background:var(--ink);color:var(--paper)!important;
+    padding:9px 18px;border-radius:100px;
+    opacity:1!important;
+    font-family:'JetBrains Mono',monospace;font-size:12px;
+    display:inline-flex;align-items:center;gap:6px;
+  }
+  .nsg-pill:hover{background:var(--rose-deep);}
 
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<!-- <a href="#" class="image avatar"><img src="images/Ana5.png" alt="" /></a> -->
-					<h3>Hello, <strong,b>I AM ANA</strong,b> <br /> {Game Dev Student
-					and Producer}<br />
-					Check out all of my projects on <a href="https://3noodles.itch.io">itch.io!</a></h3>
-				</div>
-			</header>
+  /* ---- HERO ---- */
+  .hero{padding:88px 0 90px;}
+  .hero-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:40px;align-items:center;}
+  .hero-eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    color:var(--rose-deep);font-weight:500;
+    font-size:13px;letter-spacing:.12em;text-transform:uppercase;
+    margin-bottom:20px;position:relative;display:inline-block;
+  }
+  .squiggle{position:absolute;left:0;bottom:-8px;width:150px;height:10px;}
+  .hero-name{
+    font-family:'Syne',sans-serif;font-weight:800;
+    font-size:clamp(52px,8.4vw,108px);
+    line-height:0.98;letter-spacing:0;
+    text-transform:uppercase;
+    display:flex;flex-direction:column;gap:4px;
+  }
+  .hero-name .line2{color:var(--rose);}
+  .hero-claim{
+    max-width:520px;margin-top:30px;
+    font-size:18px;line-height:1.55;color:#333;
+  }
+  .hero-photo-wrap{position:relative;}
+  .photo-blob{
+    position:absolute;
+    width:104%;height:104%;top:-6%;left:-4%;
+    background:var(--rose);
+    border-radius:63% 37% 54% 46% / 43% 58% 42% 57%;
+    transform:rotate(-4deg);
+    z-index:0;
+  }
+  .hero-photo{
+    position:relative;z-index:1;
+    width:100%;aspect-ratio:4/5;object-fit:cover;
+    border-radius:60% 40% 52% 48% / 44% 55% 45% 56%;
+    filter:grayscale(1) contrast(1.05);
+    display:block;
+  }
+  .wavy-divider{display:block;width:100%;height:34px;margin-top:20px;}
 
-		<!-- Main -->
-			<div id="main">
+  /* ---- NSG PORTAL ---- */
+  .nsg-portal-outer{padding:0 40px;margin:0 auto 64px;max-width:var(--maxw);}
+  .nsg-portal{
+    --void:#08070a; --void-ink:#eeecf0; --void-dim:#a49fae; --signal:#8657ff; --signal-2:#c3a6ff;
+    position:relative;overflow:hidden;
+    background:var(--void);
+    border-radius:22px;
+    border:1px solid #201d26;
+    padding:56px 44px 40px;
+    display:flex;flex-direction:column;align-items:center;text-align:center;
+  }
+  .nsg-portal-stars{
+    position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.7;
+    background-image:
+      radial-gradient(1.5px 1.5px at 12% 22%, #fff, transparent),
+      radial-gradient(1px 1px at 28% 68%, #fff, transparent),
+      radial-gradient(1.5px 1.5px at 44% 12%, #fff, transparent),
+      radial-gradient(1px 1px at 62% 44%, #fff, transparent),
+      radial-gradient(1.5px 1.5px at 78% 78%, #fff, transparent),
+      radial-gradient(1px 1px at 88% 28%, #fff, transparent),
+      radial-gradient(1.5px 1.5px at 8% 82%, #fff, transparent),
+      radial-gradient(1px 1px at 52% 90%, #fff, transparent),
+      radial-gradient(1.5px 1.5px at 95% 60%, #fff, transparent),
+      radial-gradient(1px 1px at 35% 38%, #fff, transparent);
+    background-repeat:no-repeat;
+  }
+  .nsg-portal-glow{
+    position:absolute;width:420px;height:420px;border-radius:50%;
+    background:radial-gradient(circle,rgba(134,87,255,.35),transparent 70%);
+    top:-160px;left:50%;transform:translateX(-50%);
+    filter:blur(10px);pointer-events:none;
+  }
+  .nsg-portal-tag{
+    position:relative;z-index:2;
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--signal-2);border:1px solid rgba(134,87,255,.4);border-radius:100px;
+    padding:6px 14px;margin-bottom:26px;background:rgba(134,87,255,.08);
+  }
+  .nsg-portal-astro{
+    position:relative;z-index:2;width:150px;
+    animation:nsgFloat 7s ease-in-out infinite;
+    filter:drop-shadow(0 20px 30px rgba(0,0,0,.6));
+  }
+  @keyframes nsgFloat{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-14px) rotate(1.5deg);}}
+  .nsg-portal-claim{
+    position:relative;z-index:2;
+    font-family:'Roboto Mono',monospace;font-weight:500;font-size:clamp(19px,2.6vw,28px);
+    color:var(--void-ink);margin:26px 0 8px;max-width:480px;line-height:1.4;
+  }
+  .nsg-portal-sub{
+    position:relative;z-index:2;
+    font-family:'Roboto Mono',monospace;font-size:12.5px;color:var(--void-dim);
+    max-width:440px;line-height:1.7;margin-bottom:28px;
+  }
+  .nsg-portal-cta{
+    position:relative;z-index:2;
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Roboto Mono',monospace;font-size:13px;color:var(--void);
+    background:var(--signal-2);padding:11px 22px;border-radius:100px;
+    transition:background .15s;
+  }
+  .nsg-portal-cta:hover{background:#fff;}
+  .nsg-portal-mark{
+    position:absolute;z-index:2;bottom:22px;right:26px;
+    display:flex;align-items:center;gap:8px;opacity:.55;
+  }
+  .nsg-portal-mark img{width:26px;height:26px;filter:invert(1);}
+  .nsg-portal-mark span{font-family:'Roboto Mono',monospace;font-size:11px;color:var(--void-ink);}
 
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<h2>I put the ANA in mANAgement!<br /></h2>
-						</header>
-						<p>What I love about being a Game Producer is coordinating projects where creative people pour their heart and soul into their work. Development always comes with highs and lows, but knowing that the final product is more than just another media to consume, that it’s an inspiring experience for the player, makes this job incredibly rewarding.</p>
-						<ul class="actions">
-							<li><a href="http://3noodles.de" target="_blank" class="button">Meet my team!</a></li>
-						</ul>
-					</section>
+  /* ---- QUICK FACTS ---- */
+  .facts{
+    border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);
+    background:var(--tint);
+  }
+  .facts-grid{display:grid;grid-template-columns:repeat(4,1fr);}
+  .fact{padding:36px 40px;border-left:1px solid var(--line);}
+  .fact:first-child{border-left:none;}
+  .fact-num{
+    font-family:'Syne',sans-serif;font-weight:800;font-size:44px;color:var(--ink);
+    display:inline-block;
+  }
+  .fact:nth-child(2) .fact-num{transform:rotate(-2deg);}
+  .fact:nth-child(4) .fact-num{transform:rotate(1.5deg);}
+  .fact-label{
+    font-family:'JetBrains Mono',monospace;font-size:11.5px;
+    letter-spacing:.05em;text-transform:uppercase;color:var(--gray);margin-top:6px;
+  }
 
-				<!-- Two -->
-					<section id="two">
-						<h2>Recent Projects</h2>
-						<div class="row">
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/FF_full.png" class="image fit thumb"><img src="images/thumbs/FF_KeyVisual.jpg" alt="" /></a>
-								<h3>Flora Forge</h3>
-								<p>A cozy RTS about roboplants cleaning up their planet, which is covered in trash.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/RF_full.png" class="image fit thumb"><img src="images/thumbs/ReFormation_Keyvisual.png" alt="" /></a>
-								<h3>Re:Formation</h3>
-								<p>An awareness Game about common Cybersecurity breaches in the workplace.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/GG_full.png" class="image fit thumb"><img src="images/thumbs/GG_KeyVisual.png" alt="" /></a>
-								<h3>Grimm & Grimmer</h3>
-								<p>This Point and Click Adventure lets you experience the dark side of the Grimm fairytales.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/Revolve_full.png" class="image fit thumb"><img src="images/thumbs/Revolve_cover.png" alt="" /></a>
-								<h3>Revolve</h3>
-								<p>Our take on a extraction-shooter board game!</p>
-							</article>
-						</div>
-						<ul class="actions">
-							<li><a href="Portfolio_AnaMicanovic.pdf" download="portfolio_Ana Micanovic" class="button">Download Full Portfolio</a></li>
-						</ul>
-					</section>
+  .section{padding:96px 0;}
+  .section-head{
+    display:flex;align-items:baseline;justify-content:space-between;
+    margin-bottom:52px;border-bottom:1px solid var(--line);padding-bottom:20px;
+  }
+  .section-head h2{
+    font-family:'Syne',sans-serif;font-weight:800;font-size:34px;
+    text-transform:uppercase;letter-spacing:-.01em;
+  }
+  .section-index{font-family:'JetBrains Mono',monospace;color:var(--rose-deep);font-size:13px;}
 
-				<!-- Three -->
-					<section id="three">
-						<h2>Get In Touch</h2>
-						<p>If you are interested in my work, a collaboration or just want to chat, do not hesitate to contact me!</p>
-						<div class="row">
-                            <div class="col-8 col-12-small">
-                                <form method="post" action="mailto:amicanovic12@gmail.com" enctype="text/plain">
-                                    <div class="row gtr-uniform gtr-50">
-                                        <div class="col-6 col-12-xsmall">
-                                            <input type="text" name="name" id="name" placeholder="Name" required />
-                                        </div>
-                                        <div class="col-6 col-12-xsmall">
-                                            <input type="email" name="email" id="email" placeholder="Email" required />
-                                        </div>
-                                        <div class="col-12">
-                                            <textarea name="message" id="message" placeholder="Message" rows="4" required></textarea>
-                                        </div>
-                                        <div class="col-12">
-                                            <ul class="actions">
-                                                <li><input type="submit" value="Send Message" /></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        
-							<div class="col-4 col-12-small">
-								<ul class="labeled-icons">
-									<li>
-										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
-										Wileystraße 1<br />
-										89231 Neu-Ulm<br />
-										Germany
-									</li>
-									<li>
-										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
-										<a href="mailto:amicanovic12@gmail.com">amicanovic12@gmail.com</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</section>
+  /* ---- PROJECTS ---- */
+  .project{border-bottom:1px solid var(--line);cursor:pointer;}
+  .project:first-child{border-top:1px solid var(--line);}
+  .project-row{
+    display:grid;grid-template-columns:60px 1fr auto auto;
+    align-items:center;gap:28px;padding:30px 0;
+    transition:background .15s;
+  }
+  .project:hover .project-row{background:var(--tint);}
+  .p-index{font-family:'JetBrains Mono',monospace;color:var(--gray);font-size:14px;}
+  .p-title{font-family:'Syne',sans-serif;font-weight:700;font-size:26px;text-transform:uppercase;}
+  .p-title .p-sub{
+    display:block;font-family:'Inter',sans-serif;font-weight:400;
+    text-transform:none;font-size:14px;color:var(--gray);margin-top:4px;
+  }
+  .p-meta{
+    font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gray);
+    text-align:right;line-height:1.6;white-space:nowrap;
+  }
+  .p-toggle{
+    width:34px;height:34px;border:1px solid var(--ink);border-radius:100px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'JetBrains Mono',monospace;font-size:16px;
+    transition:transform .2s, background .2s;
+  }
+  .project.open .p-toggle{background:var(--ink);color:var(--paper);transform:rotate(45deg);}
+  .p-detail{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+  .project.open .p-detail{max-height:900px;}
+  .p-detail-inner{
+    padding:0 0 44px 88px;
+    display:grid;grid-template-columns:1fr 1fr 1fr;gap:36px;
+  }
+  .thumb-placeholder{
+    grid-column:1 / -1;
+    height:200px;border:1px solid var(--line);border-radius:8px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gray);
+    margin-bottom:8px;background:var(--tint);
+  }
+  .dc-block h4{
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--rose-deep);margin-bottom:10px;
+  }
+  .dc-block ul{list-style:none;}
+  .dc-block li{font-size:14px;line-height:1.55;color:#333;margin-bottom:6px;padding-left:16px;position:relative;}
+  .dc-block li::before{content:"•";position:absolute;left:0;color:var(--rose-deep);}
+  .dc-outcome{grid-column:1/-1;border-top:1px solid var(--line);padding-top:20px;margin-top:6px;}
 
+  /* ---- SKILLS ---- */
+  .pillars{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);
+  }
+  .pillar{background:var(--paper);padding:36px 32px;}
+  .pillar-label{
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--rose-deep);margin-bottom:6px;
+  }
+  .pillar h3{font-family:'Syne',sans-serif;font-weight:700;font-size:21px;text-transform:uppercase;margin-bottom:20px;}
+  .pillar ul{list-style:none;}
+  .pillar li{font-size:14.5px;padding:9px 0;border-top:1px solid var(--line);color:#333;}
+  .pillar li:first-child{border-top:none;}
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-                        <li><a href="https://linkedin.com/in/ana-micanovic-00b553313" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                        <li><a href="https://discord.com/users/565171858807324672" class="icon brands fa-discord"><span class="label">Discord</span></a></li>
-                        <li><a href="mailto:amicanovic12@gmail.com" class="icon solid fa-envelope"><span class="label">Mail</span></a></li>
-					</ul>
-				</div>
-			</footer>
+  /* ---- ABOUT ---- */
+  .about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:start;}
+  .about-quote{font-family:'Syne',sans-serif;font-weight:700;font-size:26px;line-height:1.25;color:var(--ink);}
+  .about-quote span{color:var(--rose-deep);}
+  .about-body p{font-size:16px;line-height:1.7;color:#333;margin-bottom:18px;}
+  .edu-block{margin-top:28px;border-top:1px solid var(--line);padding-top:20px;}
+  .edu-row{display:flex;justify-content:space-between;gap:20px;padding:10px 0;font-size:14px;}
+  .edu-row .yr{font-family:'JetBrains Mono',monospace;color:var(--gray);white-space:nowrap;}
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-	</body>
+  /* ---- FOOTER ---- */
+  footer{background:var(--ink);color:var(--paper);padding:90px 0 50px;}
+  .footer-head{
+    font-family:'Syne',sans-serif;font-weight:800;
+    font-size:clamp(38px,6vw,72px);text-transform:uppercase;line-height:1;
+    margin-bottom:40px;
+  }
+  .footer-head .rose{color:var(--rose);}
+  .footer-links{display:flex;gap:40px;flex-wrap:wrap;margin-bottom:70px;}
+  .footer-links a{
+    font-family:'JetBrains Mono',monospace;font-size:14px;
+    border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:4px;
+  }
+  .nsg-footer{
+    border:1px solid rgba(255,255,255,.25);border-radius:12px;
+    padding:26px 30px;display:flex;justify-content:space-between;align-items:center;
+    flex-wrap:wrap;gap:14px;margin-bottom:60px;
+    transform:rotate(-0.6deg);
+  }
+  .nsg-footer .l1{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--rose);}
+  .nsg-footer .l2{font-family:'Syne',sans-serif;font-weight:700;font-size:22px;margin-top:4px;}
+  .foot-bottom{
+    display:flex;justify-content:space-between;color:rgba(255,255,255,.45);
+    font-family:'JetBrains Mono',monospace;font-size:11.5px;flex-wrap:wrap;gap:10px;
+  }
+
+  @media (max-width:860px){
+    .wrap{padding:0 22px;}
+    nav{padding:16px 22px;gap:12px;}
+    .nav-links{display:none;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-photo-wrap{max-width:280px;order:-1;margin-bottom:20px;}
+    .nsg-portal-outer{padding:0 18px;}
+    .nsg-portal{padding:42px 22px 32px;border-radius:16px;}
+    .nsg-portal-mark{position:static;margin-top:22px;justify-content:center;}
+    .facts-grid{grid-template-columns:repeat(2,1fr);}
+    .fact:nth-child(3){border-left:none;}
+    .p-detail-inner{grid-template-columns:1fr;padding-left:0;}
+    .project-row{grid-template-columns:34px 1fr auto;}
+    .p-meta{display:none;}
+    .pillars{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo-lockup">MICANOVIC<br>ANA</div>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="nsg-pill" href="https://negativespacegames.com" target="_blank" rel="noopener">negativespacegames.com ↗</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero wrap">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-eyebrow">
+        Game Producer
+        <svg class="squiggle" viewBox="0 0 150 10" xmlns="http://www.w3.org/2000/svg"><path d="M2 7 C 20 2, 35 9, 50 5 S 80 1, 95 6 S 130 9, 148 4" stroke="#E6A2B5" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+      </div>
+      <div class="hero-name">
+        <div>ANA</div>
+        <div class="line2">MICANOVIC</div>
+      </div>
+      <p class="hero-claim">I bring business clarity, technical understanding and creative vision together, and guide games from first idea to gold master.</p>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="photo-blob"></div>
+      <img class="hero-photo" src="assets/portrait.jpg" alt="Ana Micanovic">
+    </div>
+  </div>
+  <svg class="wavy-divider" viewBox="0 0 1200 34" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 20 C 100 5, 200 34, 300 20 S 500 5, 600 20 S 800 34, 900 20 S 1100 5, 1200 20" stroke="#0D0D0D" stroke-width="1.5" fill="none"/>
+  </svg>
+</section>
+
+<div class="nsg-portal-outer">
+  <div class="nsg-portal">
+    <div class="nsg-portal-stars"></div>
+    <div class="nsg-portal-glow"></div>
+    <div class="nsg-portal-tag">Side project · own studio</div>
+    <img class="nsg-portal-astro" src="assets/nsg/astronaut.webp" alt="negativespace astronaut">
+    <div class="nsg-portal-claim">Designing experiences, not products.</div>
+    <p class="nsg-portal-sub">Together with two teammates I'm building negativespace, a small studio for original IP and high-end co-development in Unreal Engine.</p>
+    <a class="nsg-portal-cta" href="https://negativespacegames.com" target="_blank" rel="noopener">Visit negativespacegames.com ↗</a>
+    <div class="nsg-portal-mark"><img src="assets/nsg/mark.webp" alt=""><span>negativespace</span></div>
+  </div>
+</div>
+
+<section class="facts">
+  <div class="wrap facts-grid">
+    <div class="fact"><div class="fact-num">05</div><div class="fact-label">Projects shipped</div></div>
+    <div class="fact"><div class="fact-num">10</div><div class="fact-label">Largest team led</div></div>
+    <div class="fact"><div class="fact-num">02</div><div class="fact-label">Engines: Unreal 5 / Godot</div></div>
+    <div class="fact"><div class="fact-num">15–16</div><div class="fact-label">Weeks per production cycle</div></div>
+  </div>
+</section>
+
+<section class="section wrap" id="work">
+  <div class="section-head">
+    <h2>Projects</h2>
+    <span class="section-index">Click to open Director's Comment</span>
+  </div>
+  <div id="projects"></div>
+</section>
+
+<section class="section wrap" id="skills">
+  <div class="section-head">
+    <h2>Skills</h2>
+    <span class="section-index">Business · Tech · Creative</span>
+  </div>
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-label">Pillar 01</div>
+      <h3>Business &amp; Management</h3>
+      <ul>
+        <li>Scrum &amp; Agile Management</li>
+        <li>Stakeholder Management</li>
+        <li>Risk &amp; Scope Management</li>
+        <li>Market &amp; Competitor Research</li>
+      </ul>
+    </div>
+    <div class="pillar">
+      <div class="pillar-label">Pillar 02</div>
+      <h3>Technical</h3>
+      <ul>
+        <li>Unreal Engine 5, Godot</li>
+        <li>C#, Python</li>
+        <li>HTML &amp; CSS</li>
+        <li>Technical risk awareness</li>
+      </ul>
+    </div>
+    <div class="pillar">
+      <div class="pillar-label">Pillar 03</div>
+      <h3>Creative</h3>
+      <ul>
+        <li>Graphic design</li>
+        <li>UI / UX</li>
+        <li>Bridge between game design &amp; business</li>
+        <li>Storytelling &amp; vision-keeping</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="about">
+  <div class="section-head">
+    <h2>About</h2>
+    <span class="section-index">Background</span>
+  </div>
+  <div class="about-grid">
+    <div>
+      <div class="about-quote">&ldquo;I put the <span>ANA</span> in mANAgement.&rdquo;</div>
+      <div class="edu-block">
+        <div class="edu-row"><span>FSS Ulm, A-Levels &amp; Design Certificate</span><span class="yr">2019–22</span></div>
+        <div class="edu-row"><span>HNU, B.A. Game Production &amp; Management</span><span class="yr">2023–</span></div>
+      </div>
+    </div>
+    <div class="about-body">
+      <p>I come from graphic design and hospitality, two worlds that sharpened my eye for detail and my love for teamwork and sticking together.</p>
+      <p>What motivates me most is creating the right environment for creative growth and giving people room to explore their potential, all while keeping projects on time and on budget.</p>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-head">LET'S BUILD<br>SOMETHING<span class="rose">.</span></div>
+    <div class="footer-links">
+      <a href="mailto:amicanovic12@gmail.com">amicanovic12@gmail.com</a>
+      <a href="https://linkedin.com/in/ana-micanovic-00b553313" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+    <div class="nsg-footer">
+      <div>
+        <div class="l1">Next Venture</div>
+        <div class="l2">negativespacegames.com</div>
+      </div>
+      <a class="nsg-pill" href="https://negativespacegames.com" target="_blank" rel="noopener" style="background:var(--rose);color:var(--ink)!important;">Visit ↗</a>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Ana Micanovic</span>
+      <span>Game Producer Portfolio</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const projects = [
+  {
+    idx:"01", title:"Revolve", sub:"Extraction Shooter (Board Game)",
+    meta:["Oct 2023","PC / Analog","Team of 6","15 weeks"],
+    situation:["My first ever project and the starting point of my producer career","Goal was translating digital extraction-shooter mechanics into an analog board game","Team size was reduced early, everyone was new to game dev"],
+    actions:["Shifted focus toward defining and validating the core loop","Introduced frequent, structured playtests","Actively reduced scope for clarity and polish"],
+    learnings:["Core gameplay has to come before features","Playtesting is the fastest way to solve design uncertainty","Production quality can strongly differentiate a project"],
+    outcome:"Won our school's \"Best Game\" award, the first time a first-year team ever had."
+  },
+  {
+    idx:"02", title:"Grimm &amp; Grimmer", sub:"Point &amp; Click Adventure",
+    meta:["Apr 2024","PC","Team of 7","15 weeks"],
+    situation:["My first digital project, aiming for a 2.5D look with only one programmer","Combining 2D and 3D in Unreal quickly became the main blocker"],
+    actions:["Started research sessions with programming and art leads","Ran rapid prototyping to validate technical approaches","Evaluated alternative engines before committing to a workaround"],
+    learnings:["Engine choice has to match the team's skills","Technical ambition has to match available resources"],
+    outcome:"The visual goal was reached, at high cost, but working technically and visually."
+  },
+  {
+    idx:"03", title:"Re:Formation", sub:"Serious Game (Cybersecurity)",
+    meta:["Oct 2024","PC / Browser","Team of 8","15 weeks"],
+    situation:["Started as a complex detective-narrative RPG","Our lead programmer dropped out mid-production","Left behind an unstable prototype with an overly complex core loop"],
+    actions:["Made the call to completely reset the game vision","Reduced the project to a clear, cyber-themed platformer","Reorganized the team around rapid iteration and core functionality"],
+    learnings:["Scope control is critical, especially in client work","Decisive leadership is essential in a crisis"],
+    outcome:"Despite the late pivot, we delivered a presentable vertical slice in 5 weeks, and the client was happy."
+  },
+  {
+    idx:"04", title:"Flora Forge", sub:"Cozy RTS",
+    meta:["Apr 2025","PC","Team of 6","16 weeks"],
+    situation:["Started with a strong focus on realistic planning","We used a lean game design approach to iterate efficiently"],
+    actions:["Worked closely with the programmer to streamline workflows","Cut unnecessary meetings","Shifted planning toward feature-oriented milestones"],
+    learnings:["Features should be planned and tested as complete units","Early, frequent playtesting is essential","Buffers are non-negotiable"],
+    outcome:"Finished on time, without burnout, and stayed within scope."
+  },
+  {
+    idx:"05", title:"Raz.log", sub:"Action RPG",
+    meta:["Oct 2025","PC","Team of 10","15 weeks"],
+    situation:["My first deliberate combination of the producer role with hands-on UI work","Took full artistic and technical ownership of the UI"],
+    actions:["Introduced regular check-ins and direct communication","Reduced feature count by merging tasks","Cut scope aggressively once risks became visible"],
+    learnings:["Combining production with hands-on dev heavily limits your own management bandwidth","Design, tech and narrative need to stay aligned around one shared gameplay flow"],
+    outcome:"Despite structural challenges, we reached a stable, presentable state with a fully integrated UI."
+  }
+];
+
+const container = document.getElementById('projects');
+projects.forEach(p => {
+  const el = document.createElement('div');
+  el.className = 'project';
+  el.innerHTML = `
+    <div class="project-row">
+      <div class="p-index">${p.idx}</div>
+      <div class="p-title">${p.title}<span class="p-sub">${p.sub}</span></div>
+      <div class="p-meta">${p.meta.join(' · ')}</div>
+      <div class="p-toggle">+</div>
+    </div>
+    <div class="p-detail">
+      <div class="p-detail-inner">
+        <div class="thumb-placeholder">Project imagery, final crop &amp; treatment pending</div>
+        <div class="dc-block">
+          <h4>Situation</h4>
+          <ul>${p.situation.map(s=>`<li>${s}</li>`).join('')}</ul>
+        </div>
+        <div class="dc-block">
+          <h4>Producer Actions</h4>
+          <ul>${p.actions.map(s=>`<li>${s}</li>`).join('')}</ul>
+        </div>
+        <div class="dc-block">
+          <h4>Key Learnings</h4>
+          <ul>${p.learnings.map(s=>`<li>${s}</li>`).join('')}</ul>
+        </div>
+        <div class="dc-block dc-outcome">
+          <h4>Outcome</h4>
+          <ul><li>${p.outcome}</li></ul>
+        </div>
+      </div>
+    </div>
+  `;
+  el.querySelector('.project-row').addEventListener('click', () => el.classList.toggle('open'));
+  container.appendChild(el);
+});
+</script>
+
+</body>
 </html>

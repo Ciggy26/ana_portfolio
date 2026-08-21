@@ -38,8 +38,6 @@
   }
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px;}
   a{color:inherit;text-decoration:none;}
-
-  /* ---- NAV ---- */
   header{
     position:sticky;top:0;z-index:50;
     background:rgba(255,255,255,.92);
@@ -69,8 +67,6 @@
     display:inline-flex;align-items:center;gap:6px;
   }
   .nsg-pill:hover{background:var(--rose-deep);}
-
-  /* ---- HERO ---- */
   .hero{padding:88px 0 90px;}
   .hero-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center;}
   .hero-eyebrow{
@@ -94,12 +90,12 @@
   }
   .hero-photo-wrap{position:relative;}
   .photo-blob{
-  position:absolute;
-  width:200%;height:200%;top:-14%;left:-32%;
-  background:var(--rose);
-  border-radius:63% 37% 54% 46% / 43% 58% 42% 57%;
-  transform:rotate(-6deg);
-  z-index:0;
+    position:absolute;
+    width:150%;height:150%;top:-18%;left:-38%;
+    background:var(--rose);
+    border-radius:63% 37% 54% 46% / 43% 58% 42% 57%;
+    transform:rotate(-6deg);
+    z-index:0;
   }
   .hero-photo{
     position:relative;z-index:1;
@@ -109,8 +105,6 @@
     display:block;
   }
   .wavy-divider{display:block;width:100%;height:34px;margin-top:20px;}
-
-  /* ---- NSG PORTAL ---- */
   .nsg-portal-outer{padding:0 40px;margin:0 auto 64px;max-width:var(--maxw);}
   .nsg-portal{
     --void:#08070a; --void-ink:#eeecf0; --void-dim:#a49fae; --signal:#8657ff; --signal-2:#c3a6ff;
@@ -142,13 +136,6 @@
     top:-160px;left:50%;transform:translateX(-50%);
     filter:blur(10px);pointer-events:none;
   }
-  .nsg-portal-tag{
-    position:relative;z-index:2;
-    display:inline-flex;align-items:center;gap:8px;
-    font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--signal-2);border:1px solid rgba(134,87,255,.4);border-radius:100px;
-    padding:6px 14px;margin-bottom:26px;background:rgba(134,87,255,.08);
-  }
   .nsg-portal-astro{
     position:relative;z-index:2;width:150px;
     animation:nsgFloat 7s ease-in-out infinite;
@@ -179,8 +166,6 @@
   }
   .nsg-portal-mark img{width:26px;height:26px;filter:invert(1);}
   .nsg-portal-mark span{font-family:'Roboto Mono',monospace;font-size:11px;color:var(--void-ink);}
-
-  /* ---- QUICK FACTS ---- */
   .facts{
     border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);
     background:var(--tint);
@@ -198,7 +183,6 @@
     font-family:'JetBrains Mono',monospace;font-size:11.5px;
     letter-spacing:.05em;text-transform:uppercase;color:var(--gray);margin-top:6px;
   }
-
   .section{padding:96px 0;}
   .section-head{
     display:flex;align-items:baseline;justify-content:space-between;
@@ -209,8 +193,6 @@
     text-transform:uppercase;letter-spacing:-.01em;
   }
   .section-index{font-family:'JetBrains Mono',monospace;color:var(--rose-deep);font-size:13px;}
-
-  /* ---- PROJECTS ---- */
   .project{border-bottom:1px solid var(--line);cursor:pointer;}
   .project:first-child{border-top:1px solid var(--line);}
   .project-row{
@@ -237,17 +219,19 @@
   }
   .project.open .p-toggle{background:var(--ink);color:var(--paper);transform:rotate(45deg);}
   .p-detail{max-height:0;overflow:hidden;transition:max-height .35s ease;}
-  .project.open .p-detail{max-height:900px;}
+  .project.open .p-detail{max-height:1000px;}
   .p-detail-inner{
     padding:0 0 44px 88px;
     display:grid;grid-template-columns:1fr 1fr 1fr;gap:36px;
   }
-  .thumb-placeholder{
+  .thumb{
     grid-column:1 / -1;
-    height:200px;border:1px solid var(--line);border-radius:8px;
-    display:flex;align-items:center;justify-content:center;
-    font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gray);
-    margin-bottom:8px;background:var(--tint);
+    height:280px;border:1px solid var(--line);border-radius:8px;
+    overflow:hidden;margin-bottom:8px;background:var(--tint);
+  }
+  .thumb img{
+    width:100%;height:100%;object-fit:cover;display:block;
+    filter:grayscale(1) contrast(1.08);
   }
   .dc-block h4{
     font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;
@@ -257,8 +241,6 @@
   .dc-block li{font-size:14px;line-height:1.55;color:#333;margin-bottom:6px;padding-left:16px;position:relative;}
   .dc-block li::before{content:"•";position:absolute;left:0;color:var(--rose-deep);}
   .dc-outcome{grid-column:1/-1;border-top:1px solid var(--line);padding-top:20px;margin-top:6px;}
-
-  /* ---- SKILLS ---- */
   .pillars{
     display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
     background:var(--line);border:1px solid var(--line);
@@ -272,8 +254,6 @@
   .pillar ul{list-style:none;}
   .pillar li{font-size:14.5px;padding:9px 0;border-top:1px solid var(--line);color:#333;}
   .pillar li:first-child{border-top:none;}
-
-  /* ---- ABOUT ---- */
   .about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:start;}
   .about-quote{font-family:'Syne',sans-serif;font-weight:700;font-size:26px;line-height:1.25;color:var(--ink);}
   .about-quote span{color:var(--rose-deep);}
@@ -281,8 +261,6 @@
   .edu-block{margin-top:28px;border-top:1px solid var(--line);padding-top:20px;}
   .edu-row{display:flex;justify-content:space-between;gap:20px;padding:10px 0;font-size:14px;}
   .edu-row .yr{font-family:'JetBrains Mono',monospace;color:var(--gray);white-space:nowrap;}
-
-  /* ---- FOOTER ---- */
   footer{background:var(--ink);color:var(--paper);padding:90px 0 50px;}
   .footer-head{
     font-family:'Syne',sans-serif;font-weight:800;
@@ -307,7 +285,6 @@
     display:flex;justify-content:space-between;color:rgba(255,255,255,.45);
     font-family:'JetBrains Mono',monospace;font-size:11.5px;flex-wrap:wrap;gap:10px;
   }
-
   @media (max-width:860px){
     .wrap{padding:0 22px;}
     nav{padding:16px 22px;gap:12px;}
@@ -324,11 +301,11 @@
     .p-meta{display:none;}
     .pillars{grid-template-columns:1fr;}
     .about-grid{grid-template-columns:1fr;}
+    .thumb{height:200px;}
   }
 </style>
 </head>
 <body>
-
 <header>
   <nav>
     <div class="logo-lockup">MICANOVIC<br>ANA</div>
@@ -341,7 +318,6 @@
     </div>
   </nav>
 </header>
-
 <section class="hero wrap">
   <div class="hero-grid">
     <div>
@@ -364,12 +340,10 @@
     <path d="M0 20 C 100 5, 200 34, 300 20 S 500 5, 600 20 S 800 34, 900 20 S 1100 5, 1200 20" stroke="#0D0D0D" stroke-width="1.5" fill="none"/>
   </svg>
 </section>
-
 <div class="nsg-portal-outer">
   <div class="nsg-portal">
     <div class="nsg-portal-stars"></div>
     <div class="nsg-portal-glow"></div>
-    <div class="nsg-portal-tag">upcoming</div>
     <img class="nsg-portal-astro" src="assets/nsg/astronaut.webp" alt="negativespace astronaut">
     <div class="nsg-portal-claim">Designing experiences, not products.</div>
     <p class="nsg-portal-sub">Together with two teammates I'm building negativespace, a small studio for original IP and high-end co-development in Unreal Engine.</p>
@@ -377,7 +351,6 @@
     <div class="nsg-portal-mark"><img src="assets/nsg/mark.webp" alt=""><span>negativespace</span></div>
   </div>
 </div>
-
 <section class="facts">
   <div class="wrap facts-grid">
     <div class="fact"><div class="fact-num">05</div><div class="fact-label">Projects shipped</div></div>
@@ -386,7 +359,6 @@
     <div class="fact"><div class="fact-num">15–16</div><div class="fact-label">Weeks per production cycle</div></div>
   </div>
 </section>
-
 <section class="section wrap" id="work">
   <div class="section-head">
     <h2>Projects</h2>
@@ -394,7 +366,6 @@
   </div>
   <div id="projects"></div>
 </section>
-
 <section class="section wrap" id="skills">
   <div class="section-head">
     <h2>Skills</h2>
@@ -433,7 +404,6 @@
     </div>
   </div>
 </section>
-
 <section class="section wrap" id="about">
   <div class="section-head">
     <h2>About</h2>
@@ -453,7 +423,6 @@
     </div>
   </div>
 </section>
-
 <footer id="contact">
   <div class="wrap">
     <div class="footer-head">LET'S BUILD<br>SOMETHING<span class="rose">.</span></div>
@@ -474,11 +443,10 @@
     </div>
   </div>
 </footer>
-
 <script>
 const projects = [
   {
-    idx:"01", title:"Revolve", sub:"Extraction Shooter (Board Game)",
+    idx:"01", title:"Revolve", sub:"Extraction Shooter (Board Game)", img:"assets/projects/revolve.jpg",
     meta:["Oct 2023","PC / Analog","Team of 6","15 weeks"],
     situation:["My first ever project and the starting point of my producer career","Goal was translating digital extraction-shooter mechanics into an analog board game","Team size was reduced early, everyone was new to game dev"],
     actions:["Shifted focus toward defining and validating the core loop","Introduced frequent, structured playtests","Actively reduced scope for clarity and polish"],
@@ -486,7 +454,7 @@ const projects = [
     outcome:"Won our school's \"Best Game\" award, the first time a first-year team ever had."
   },
   {
-    idx:"02", title:"Grimm &amp; Grimmer", sub:"Point &amp; Click Adventure",
+    idx:"02", title:"Grimm &amp; Grimmer", sub:"Point &amp; Click Adventure", img:"assets/projects/grimm-grimmer.jpg",
     meta:["Apr 2024","PC","Team of 7","15 weeks"],
     situation:["My first digital project, aiming for a 2.5D look with only one programmer","Combining 2D and 3D in Unreal quickly became the main blocker"],
     actions:["Started research sessions with programming and art leads","Ran rapid prototyping to validate technical approaches","Evaluated alternative engines before committing to a workaround"],
@@ -494,7 +462,7 @@ const projects = [
     outcome:"The visual goal was reached, at high cost, but working technically and visually."
   },
   {
-    idx:"03", title:"Re:Formation", sub:"Serious Game (Cybersecurity)",
+    idx:"03", title:"Re:Formation", sub:"Serious Game (Cybersecurity)", img:"assets/projects/reformation.jpg",
     meta:["Oct 2024","PC / Browser","Team of 8","15 weeks"],
     situation:["Started as a complex detective-narrative RPG","Our lead programmer dropped out mid-production","Left behind an unstable prototype with an overly complex core loop"],
     actions:["Made the call to completely reset the game vision","Reduced the project to a clear, cyber-themed platformer","Reorganized the team around rapid iteration and core functionality"],
@@ -502,7 +470,7 @@ const projects = [
     outcome:"Despite the late pivot, we delivered a presentable vertical slice in 5 weeks, and the client was happy."
   },
   {
-    idx:"04", title:"Flora Forge", sub:"Cozy RTS",
+    idx:"04", title:"Flora Forge", sub:"Cozy RTS", img:"assets/projects/flora-forge.jpg",
     meta:["Apr 2025","PC","Team of 6","16 weeks"],
     situation:["Started with a strong focus on realistic planning","We used a lean game design approach to iterate efficiently"],
     actions:["Worked closely with the programmer to streamline workflows","Cut unnecessary meetings","Shifted planning toward feature-oriented milestones"],
@@ -510,7 +478,7 @@ const projects = [
     outcome:"Finished on time, without burnout, and stayed within scope."
   },
   {
-    idx:"05", title:"Raz.log", sub:"Action RPG",
+    idx:"05", title:"Raz.log", sub:"Action RPG", img:"assets/projects/razlog.jpg",
     meta:["Oct 2025","PC","Team of 10","15 weeks"],
     situation:["My first deliberate combination of the producer role with hands-on UI work","Took full artistic and technical ownership of the UI"],
     actions:["Introduced regular check-ins and direct communication","Reduced feature count by merging tasks","Cut scope aggressively once risks became visible"],
@@ -518,7 +486,6 @@ const projects = [
     outcome:"Despite structural challenges, we reached a stable, presentable state with a fully integrated UI."
   }
 ];
-
 const container = document.getElementById('projects');
 projects.forEach(p => {
   const el = document.createElement('div');
@@ -532,7 +499,7 @@ projects.forEach(p => {
     </div>
     <div class="p-detail">
       <div class="p-detail-inner">
-        <div class="thumb-placeholder">Project imagery, final crop &amp; treatment pending</div>
+        <div class="thumb"><img src="${p.img}" alt="${p.title} screenshot" loading="lazy"></div>
         <div class="dc-block">
           <h4>Situation</h4>
           <ul>${p.situation.map(s=>`<li>${s}</li>`).join('')}</ul>
@@ -556,6 +523,5 @@ projects.forEach(p => {
   container.appendChild(el);
 });
 </script>
-
 </body>
 </html>
